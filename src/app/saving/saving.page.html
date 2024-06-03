@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Ahorro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Objetivos de ahorro</ion-card-title>
+      <ion-card-subtitle> CoinKeeperApp </ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Clasifica tus objetivos de ahorro por plazo y monto.
+    </ion-card-content>
+    <div class="ion-padding">
+    <ion-button fill="outline" class="ion-margin">Anual</ion-button>
+    <ion-button fill="outline" class="ion-margin">Mensual</ion-button>
+    <ion-button fill="outline" class="ion-margin">Semanal</ion-button>
+
+    <ion-item>
+      <ion-label position="floating">Monto del ahorro</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Clasificación del ahorro</ion-label>
+      <ion-select>
+        <ion-select-option value="viajes">Viajes</ion-select-option>
+        <ion-select-option value="vacaciones">Vacaciones</ion-select-option>
+        <ion-select-option value="compras">Compras</ion-select-option>
+        <ion-select-option value="otros">Otros</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button expand="block" class="ion-margin">Guardar</ion-button>
+    </div>
+  </ion-card>
+</ion-content>

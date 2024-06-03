@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Presupuesto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Organiza tu presupuesto</ion-card-title>
+      <ion-card-subtitle> CoinKeeperApp </ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Puedes organizar tu presupuesto como mejor lo prefieras 
+    </ion-card-content>
+    <div class="ion-padding">
+      <ion-item>
+        <ion-label position="floating">Monto presupuestado</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+      
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Seleccionar periodo
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p><ion-button fill="outline" class="ion-margin">Anual</ion-button></p>
+          <p><ion-button fill="outline" class="ion-margin">Mensual</ion-button></p>
+          <p><ion-button fill="outline" class="ion-margin">Semanal</ion-button></p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <ion-button id="guardar-button" expand="block" class="ion-margin" (click)="guardar()">Guardar</ion-button>
+  </ion-card>
+</ion-content>
