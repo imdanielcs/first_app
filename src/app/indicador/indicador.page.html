@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Indicadores</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Cerrar Sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Indicadores</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngIf="errorMessage">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Error</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ errorMessage }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-list *ngIf="!errorMessage">
+    <ion-card *ngFor="let indicator of indicators">
+      <ion-card-header>
+        <ion-card-title>{{ indicator.nombre }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Unidad de Medida: {{ indicator.unidad_medida }}</p>
+        <p>Fecha: {{ indicator.fecha | date }}</p>
+        <p>Valor: {{ indicator.valor }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

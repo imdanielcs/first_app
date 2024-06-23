@@ -12,9 +12,18 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSliderModule } from '@angular/material/slider';
+import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
+import { SplashScreen } from '@awesome-cordova-plugins/splash-screen/ngx';
+import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
+import { DbserviceService } from './dbservice.service';
+import { HttpClientModule } from '@angular/common/http'; 
+import { LogoutButtonComponent } from './logout-button/logout-button.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    LogoutButtonComponent
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -25,10 +34,11 @@ import { MatSliderModule } from '@angular/material/slider';
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpClientModule
   ],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, SQLite, SplashScreen, StatusBar, DbserviceService,
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent],

@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>CoinKeeperApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">CoinKeeperApp</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Crear Cuenta</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form (ngSubmit)="createAccount()">
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input type="text" maxlength="12" minlength="2" [(ngModel)]="username" name="username" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" maxlength="4" minlength="4" [(ngModel)]="password" name="password" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" [(ngModel)]="nombre" name="nombre" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input type="text" [(ngModel)]="apellido" name="apellido" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">País</ion-label>
+          <ion-input type="text" [(ngModel)]="pais" name="pais" required></ion-input>
+        </ion-item>
+        <div class="button-container">
+          <ion-button expand="block" color="primary" type="submit">Crear Cuenta</ion-button>
+          <ion-button expand="block" color="secondary" (click)="navigateTo($event, 'login')">Volver al Login</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  
+</ion-content>

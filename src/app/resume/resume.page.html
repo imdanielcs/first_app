@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Seguimiento de gastos e ingresos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Cerrar Sesión</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -32,6 +35,7 @@
           <ion-select-option value="Otros">Otros</ion-select-option>
         </ion-select>
       </ion-item>
+      <ion-button expand="block" (click)="takePicture()">Tomar foto de registro de gasto</ion-button>
     </div>
   </ion-card>
   <ion-card>

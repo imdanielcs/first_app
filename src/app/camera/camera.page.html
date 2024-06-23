@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Cámara</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Cámara</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card *ngIf="imageUrl">
+    <ion-card-header>
+      <ion-card-title>Imagen Capturada</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="imageUrl" alt="Captured Image">
+    </ion-card-content>
+  </ion-card>
+</ion-content>

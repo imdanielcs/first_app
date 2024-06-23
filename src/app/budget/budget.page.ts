@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimationController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-budget',
@@ -8,7 +10,18 @@ import { AnimationController } from '@ionic/angular';
 })
 export class BudgetPage implements OnInit {
 
-  constructor(private animationCtrl: AnimationController) { }
+  constructor(
+    private animationCtrl: AnimationController,
+    private authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
+
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 
   ngOnInit() {
   }

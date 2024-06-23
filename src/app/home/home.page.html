@@ -3,7 +3,10 @@
     <ion-buttons slot="start">
       <ion-title>Home</ion-title>
     </ion-buttons>
-    <ion-card slot="end">{{ fechaHora }}</ion-card>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Cerrar Sesión</ion-button>
+    </ion-buttons>
+    <!--<ion-card slot="end">{{ fechaHora }}</ion-card>--><!-- Por ahora no voy a utilizarla hora-->
   </ion-toolbar>
 </ion-header>
 
@@ -23,7 +26,6 @@
     <ion-card-content>
       Puedes crear presupuestos personalizados, realizar un seguimiento de tus gastos e ingresos, y obtener un panorama claro de tu situación financiera.
     </ion-card-content>
-    
   </ion-card>
 
   <ion-card>
@@ -40,23 +42,21 @@
       <ion-item button (click)="navigateTo($event, 'saving')">
         <ion-label>Objetivos de ahorro</ion-label>
       </ion-item>
+      <ion-item button (click)="navigateTo($event, 'indicador')">
+        <ion-label>Indicadores económicos</ion-label>
+      </ion-item>
     </ion-list>
   </ion-card>
+
   <mat-tab-group class="ion-margin custom-tabs">
     <mat-tab label="Inversiones">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lectus nibh, laoreet et ex ac, tempus elementum sapien. In tortor neque, dignissim vitae turpis vel, venenatis finibus nisi. Donec vitae diam ut neque rhoncus hendrerit. Morbi elementum nisl est. Vestibulum vitae placerat augue. Proin gravida quam nec nibh malesuada, nec eleifend est efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis tincidunt ligula est, vitae dictum mi porta in. Quisque quis mauris placerat diam tincidunt venenatis. Proin aliquam turpis et volutpat ullamcorper.
-
-      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lectus nibh, laoreet et ex ac, tempus elementum sapien. In tortor neque, dignissim vitae turpis vel, venenatis finibus nisi. Donec vitae diam ut neque rhoncus hendrerit. Morbi elementum nisl est. Vestibulum vitae placerat augue. Proin gravida quam nec nibh malesuada, nec eleifend est efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis tincidunt ligula est, vitae dictum mi porta in. Quisque quis mauris placerat diam tincidunt venenatis. Proin aliquam turpis et volutpat ullamcorper.</p>
     </mat-tab>
     <mat-tab label="Consejos">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lectus nibh, laoreet et ex ac, tempus elementum sapien. In tortor neque, dignissim vitae turpis vel, venenatis finibus nisi. Donec vitae diam ut neque rhoncus hendrerit. Morbi elementum nisl est. Vestibulum vitae placerat augue. Proin gravida quam nec nibh malesuada, nec eleifend est efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis tincidunt ligula est, vitae dictum mi porta in. Quisque quis mauris placerat diam tincidunt venenatis. Proin aliquam turpis et volutpat ullamcorper.
-
-      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lectus nibh, laoreet et ex ac, tempus elementum sapien. In tortor neque, dignissim vitae turpis vel, venenatis finibus nisi. Donec vitae diam ut neque rhoncus hendrerit. Morbi elementum nisl est. Vestibulum vitae placerat augue. Proin gravida quam nec nibh malesuada, nec eleifend est efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis tincidunt ligula est, vitae dictum mi porta in. Quisque quis mauris placerat diam tincidunt venenatis. Proin aliquam turpis et volutpat ullamcorper.</p>
     </mat-tab>
     <mat-tab label="Indicadores económicos">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lectus nibh, laoreet et ex ac, tempus elementum sapien. In tortor neque, dignissim vitae turpis vel, venenatis finibus nisi. Donec vitae diam ut neque rhoncus hendrerit. Morbi elementum nisl est. Vestibulum vitae placerat augue. Proin gravida quam nec nibh malesuada, nec eleifend est efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis tincidunt ligula est, vitae dictum mi porta in. Quisque quis mauris placerat diam tincidunt venenatis. Proin aliquam turpis et volutpat ullamcorper.
-
-      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lectus nibh, laoreet et ex ac, tempus elementum sapien. In tortor neque, dignissim vitae turpis vel, venenatis finibus nisi. Donec vitae diam ut neque rhoncus hendrerit. Morbi elementum nisl est. Vestibulum vitae placerat augue. Proin gravida quam nec nibh malesuada, nec eleifend est efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis tincidunt ligula est, vitae dictum mi porta in. Quisque quis mauris placerat diam tincidunt venenatis. Proin aliquam turpis et volutpat ullamcorper.</p>
     </mat-tab>
   </mat-tab-group>
 </ion-content>

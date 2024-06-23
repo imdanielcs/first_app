@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NavController, AnimationController } from '@ionic/angular';
+import { AuthService } from '../auth.service';
+
 
 @Component({
   selector: 'app-home',
@@ -14,7 +16,9 @@ export class HomePage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private navCtrl: NavController,
-    private animationCtrl: AnimationController
+    private animationCtrl: AnimationController,
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   async navigateTo(event: Event, page: string) {
@@ -30,20 +34,21 @@ export class HomePage implements OnInit {
     this.navCtrl.navigateForward(`/${page}`);
   }
 
-  ngOnInit() {
-    this.route.params.subscribe(params => {
-      console.log('Params:', params); // Agrega este log para depurar
-      this.usuario = params['usuario'];
-      console.log('Usuario:', this.usuario); // Agrega este log para depurar
-    });
-
-    this.actualizarFechaHora();
-    setInterval(() => {
-      this.actualizarFechaHora();
-    }, 1000);
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
-  actualizarFechaHora() {
-    const now = new Date();
-    this.fechaHora = now.toLocaleString();
+
+  ngOnInit() {
+      this.usuario = this.route.snapshot.paramMap.get('usuario') || '';
+
+      this.actualizarFechaHora();
+      setInterval(() => {
+        this.actualizarFechaHora();
+      }, 1000);
+  }
+    actualizarFechaHora() {
+      const now = new Date();
+      this.fechaHora = now.toLocaleString();
   }
 }
